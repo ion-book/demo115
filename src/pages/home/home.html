@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contacts Ionic Native
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="modalNuevoContacto()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let contacto of listaContactos">
+      <ion-avatar item-start>
+        <img [src]="contacto.photos[0].value ">
+      </ion-avatar>
+      <h2>{{contacto.displayName }}</h2>
+      <p>Dispositivo: {{contacto.phoneNumbers[0].type}} - Numero: {{contacto.phoneNumbers[0].value}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
